@@ -1,0 +1,15 @@
+#ignore log file
+*.log
+*.class
+*.jar
+.classpath
+.project
+.settings/
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+
+
+
