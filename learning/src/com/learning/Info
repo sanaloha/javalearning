@@ -1,0 +1,24 @@
+Final Class:
+=====================
+A final class is a class that cannot be inherited by any other class i.e it cannot be sub classed.
+
+====Immutable class:
+An object is immutable when its state does not change after it has been initialized.
+Ex: String class, its for security reason.
+Because an immutable object cannot be updated, program needs to create new object for every change of state.
+Benefits:
+An immutable class is good for the caching purpose as u don't have to worry about the value changes.
+An immutable class is inherently thread-safe so u don't have to worry about thread safety in multi-threaded
+environments.
+Q: how to create immutable class in java.
+
+To create an immutable class in Java, you need to follow these general principles:
+
+1. Declare the class as final so it can’t be extended.
+2. Make all of the fields private so that direct access is not allowed.
+3. Don’t provide setter methods for variables.
+4. Make all mutable fields final so that a field’s value can be assigned only once.
+5. Initialize all fields using a constructor method performing deep copy.
+6. Perform cloning of objects in the getter methods to return a copy rather than returning the actual object reference.
+
+

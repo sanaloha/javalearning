@@ -1,0 +1,3 @@
+Collector is a final class that extends object class
+It provides reduction operations such as accumulating elements into collection, summarizing elements according to
+various criteria, etc java collectors class provides various methods to deal with elements.

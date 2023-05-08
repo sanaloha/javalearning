@@ -1,0 +1,55 @@
+Pass by value
+Many java programmer question whether java is a pass by value or pass by reference.
+This article summarizes why java is always pass by value.
+
+Pass by value:
+	The method parameter values are copied to another variable and then the coped object is passed to
+	the method. The method usses the copy.
+	
+Pass by reference:
+	An alias or reference to the actual parameter is passed to the method, the method accesses the actual
+	parameter often, the confusion around these terms is a result of object reference in java, Technically
+	java is always pass by value because even though a variable might hold a reference to an object.
+	that object reference is a value that represents the objects location in memory. Object references
+	are therefore pass by value.
+	
+***Both references data types and primitive data types are passed by value.
+
+Java does not support pass-by-reference, primitive data types and immutable class objects strictly follow
+pass-by-value, hence can be safely passed to the function without any risk of modification. For non-primitive
+data types, java sends the copy of the reference to the objects created in the heap memory.
+
+https://www.scaler.com/topic/pass-by-value-and-call-by-reference-in-java/
+
+Q: How java handles pass by reference using pass by value?
+In java when we create a variable of class type, the variable holds the reference to the object in the heap
+memory. Whereas this reference is stored in the stack memory. Hence when we pass the variable as an argument
+to the method, we inherently pass a copy of the reference to the object in the heap memory.
+As a result, the method parameter that receives the object refers to the same object as that referred by the
+argument.
+
+Thus, changes to the properties of the object inside the method reflects outside as well. This effectively means
+that objects are passed to the method by use of call-by-reference.
+
+Changes to the properties of an object inside a method affect the original argument as well. However, if we 
+change the object altogether, then the original object is not changed, instead a new object is created in the
+heap, and that object is assigned to the copied reference variable passed as an argument.
+
+Case with Primitive Data Types:
+Above is the case only with java objects. Primitive data types are allocated memory in the stack memory,
+and not in the heap memory. Hence when we pass a variable of primitive data types, a copy of the variable
+is created in the stack memory, and it is passed as an argument.
+
+As a result, any changes to the copied variable inside the called method are not reflected in the original argument.
+
+Important:
+
+Java does not support pass-by-reference or call-by-reference by any means. The above scenario occurs due to the
+way objects are created in java. Java object variables are simply references that point to the real objects in the
+memory heap.
+
+java supports pass by value only, however copying the reference to an object in the stack memory does not create
+a clone of the object in the heap memory. Hence when the copied reference is sent as an argument, changes
+to the field of the referenced objects are reflected in the original fields.
+
+

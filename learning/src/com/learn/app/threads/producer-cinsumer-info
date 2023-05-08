@@ -1,0 +1,10 @@
+Producer produces the data and store in a storage area.
+	if producer is trying to add and storage is full
+	producer will wait to get free storage or item removed
+Consumer takes the data from the storage area.
+	if there is no item in the storage customer has to wait
+	when the item is added consumer will process it.
+
+Solution:
+We can have simple Q with fixed capacity and multiple producers which keeps on adding put and multiple
+consumers which keep on removing.

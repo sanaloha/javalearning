@@ -1,0 +1,22 @@
+Lambda expression:
+
+It helps us to write our code in functional style
+It provides a clear and concise way to implement SAM interface(Single Abstract Method)
+by using an expression.
+It is very useful in collection library in which it helps to iterate, filter and extract daata.
+
+Lambda ex provide implementation of functional interface
+(argument list) ->{body}
+
+Java LE is consisted of three components
+
+1) Argument list : It can be empty or non-empty as well
+2) Arrow token: It is used to link arguments-list and body of expression.
+3) Body: It contains expressions and statements for lambda expression.
+()->{
+//Body of no parameter lambda
+}
+
+(p1)->{
+//body of single parameter lambda
+}

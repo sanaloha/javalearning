@@ -1,0 +1,9 @@
+Thread visibility problem resolution
+
+	TH1--->core1---->localcache1--
+									shared cache
+	TH2->core2------>localcache2
+	
+Using volatile variable we can overcome the issue of visibility problem.
+It flushes the changes into the shared cache
+

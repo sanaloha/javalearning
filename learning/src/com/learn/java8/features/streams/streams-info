@@ -1,0 +1,20 @@
+Java provides a new additional package in java 8.
+This package consists of classes, interfaces, and enum to allows functional style.
+operations on the elements. You can use stream by importing java.util.stream package
+
+Features:
+1. It does not store elements. It simply conveys elements from a source such as a data structure,
+an array, or an I/O channel, through a pipeline of computational operations.
+2. Stream is functional in nature, operations performed on a stream does not modify it's source. For example, filtering
+a stream obtained from a collection produces new stream without the filtered elements, rather than removing elements
+from the source collection.
+3. stream is lazy and evaluates code only when required.
+4. The elements of a stream are only visited once during the life of a stream, like an iterator, a new stream must be generated
+to revisit the same elements of the source.
+5. You can use stream to filter, collect, print and convert from one data structure to other etc. In the following examples,we have 
+apply various operations with the help of stream.
+
+Filters:
+java stream provide a method filter() to filter stream elements on the basis of given predicate. Suppose you want to get only even
+elements of your list then you can fo this easily with the help of filter method. This method can takes predicate as an argument and
+returns a stream of consisting of resulted elements.
