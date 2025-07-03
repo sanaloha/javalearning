@@ -1,0 +1,19 @@
+
+https://www.geeksforgeeks.org/prevent-singleton-pattern-reflection-serialization-cloning/
+
+Overcome reflection issue: To overcome issues raised by reflection, Enums are used because
+java ensures internally that the enum value is instantiated only once. Since java Enums are
+globally accessible, they can be used for singletons. Its only drawback is that it is not 
+flexible i.e it does not allow lazy initialization. 
+
+
+===Serialization:
+Overcome serialization issue:- To overcome this issue, we have to implement 
+the method readResolve() in the singleton class.
+
+====Cloning:
+Cloning: Cloning is the concept to create duplicate objects. Using clone we can create copy
+of object. Suppose, we create clone of a singleton object, then it will create a copy that 
+is there are two instances of a singleton class, hence the class is no more singleton.  
+
+Q. How can we avoid cloning?

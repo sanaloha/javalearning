@@ -13,21 +13,21 @@ public class PassByValueDemo {
 		Ballon blue = new Ballon("blue"); //memory ref =100
 		
 		swap(red,blue);
-		System.out.println("After swap method red value="+red.getColor()+" blue value="+blue.getColor());
+		System.out.println("After swap method red value="+red.getColor()+", blue value="+blue.getColor());
 		changeValue(blue);
 		System.out.println("After changeValue method blue object value is="+blue.getColor());
 		
-		//
+		//Operation on Primitive values
 		int a=20;
 		int b=40;
 		addition(a,b);
-		System.out.println("result of addition from main="+(a+b));
+		System.out.println("result of addition from main method="+(a+b));
 		//pass by value for non-primitive:
 		Integer[] arr = new Integer[2];
 		arr[0] = 2;
 		arr[1]=4;
 		add(arr);
-		System.out.println("Addition of array from main="+(arr[0]+arr[1]));
+		System.out.println("Addition of array from main method="+(arr[0]+arr[1]));
 		
 		
 
@@ -48,11 +48,11 @@ public class PassByValueDemo {
 	
 	public static void add(Integer[] intArr) {
 		intArr[0]=10;
-		System.out.println("Result from Add:"+(intArr[0]+intArr[1]));
+		System.out.println("Result from Add Array:"+(intArr[0]+intArr[1]));
 	}
 	public static void addition(int a, int b) {
 		a=10;
-		System.out.println("Result from adition="+(a+b));
+		System.out.println("Result from adition inside method="+(a+b));
 	}
 
 }

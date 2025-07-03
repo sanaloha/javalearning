@@ -4,14 +4,14 @@ This article summarizes why java is always pass by value.
 
 Pass by value:
 	The method parameter values are copied to another variable and then the coped object is passed to
-	the method. The method usses the copy.
+	the method. The method uses the copy.
 	
 Pass by reference:
 	An alias or reference to the actual parameter is passed to the method, the method accesses the actual
 	parameter often, the confusion around these terms is a result of object reference in java, Technically
 	java is always pass by value because even though a variable might hold a reference to an object.
 	that object reference is a value that represents the objects location in memory. Object references
-	are therefore pass by value.
+	are therefore pass by value. 
 	
 ***Both references data types and primitive data types are passed by value.
 
@@ -22,6 +22,7 @@ data types, java sends the copy of the reference to the objects created in the h
 https://www.scaler.com/topic/pass-by-value-and-call-by-reference-in-java/
 
 Q: How java handles pass by reference using pass by value?
+
 In java when we create a variable of class type, the variable holds the reference to the object in the heap
 memory. Whereas this reference is stored in the stack memory. Hence when we pass the variable as an argument
 to the method, we inherently pass a copy of the reference to the object in the heap memory.

@@ -3,7 +3,7 @@ This package consists of classes, interfaces, and enum to allows functional styl
 operations on the elements. You can use stream by importing java.util.stream package
 
 Features:
-1. It does not store elements. It simply conveys elements from a source such as a data structure,
+1. It does not store elements. It simply converts elements from a source such as a data structure,
 an array, or an I/O channel, through a pipeline of computational operations.
 2. Stream is functional in nature, operations performed on a stream does not modify it's source. For example, filtering
 a stream obtained from a collection produces new stream without the filtered elements, rather than removing elements
@@ -18,3 +18,6 @@ Filters:
 java stream provide a method filter() to filter stream elements on the basis of given predicate. Suppose you want to get only even
 elements of your list then you can fo this easily with the help of filter method. This method can takes predicate as an argument and
 returns a stream of consisting of resulted elements.
+
+Streams can be used or consumed only once, once its used if someone try to use it again it will through an exceptio
+

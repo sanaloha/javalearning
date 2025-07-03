@@ -1,3 +1,4 @@
+
 package com.learn.app;
 
 public class AssignRandomString {
@@ -15,12 +16,14 @@ public class AssignRandomString {
 	}
 	
 	public AssignRandomString(int x2) {
-		this.name = new String[]{"Santosh","AMIT","GOLU","SOMU"}[x];
+		//this.name = new String[]{"Santosh","AMIT","GOLU","SOMU"}[x];
+		this.name = new String[] {"Man","Map","collection","Collections","Java24"}[x];
 	}
 
 	public static void main(String[] args) {
 		
 		AssignRandomString assign = new AssignRandomString();
+		System.out.println("Value of X="+x);
 		System.out.println("Random name="+assign.name);
 		
 		

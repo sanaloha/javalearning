@@ -6,9 +6,9 @@ public class SelectionSortDemo {
 		
 		int loopCount=0;
 		
-		int[] arr = {1, 2 ,3,4,5};
+		//int[] arr = {1, 2 ,3,4,5};
 		
-		//int[] arr = {20, 25 ,-76,55,-22};
+		int[] arr = {20, 25 ,-76,55,-22};
 		
 		
 		

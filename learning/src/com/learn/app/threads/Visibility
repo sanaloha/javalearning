@@ -7,3 +7,46 @@ Thread visibility problem resolution
 Using volatile variable we can overcome the issue of visibility problem.
 It flushes the changes into the shared cache
 
+
+====================================
+Synchronization problem
+Volatile vs compound operation:
+
+volatile will fix the issue if u have more than one thread running and both are accessing the 
+same variable. Visibility problem happens if th1 updates the value and does not push it to
+the shared cache, so thread 2 end up using the value from its own local cache. to fix this
+one can mark the variable volatile. JVM will make sure to flush it to the shared cache and to the
+local cache of Th2.
+
+But when it comes to compound operation
+lets say in a =1;
+a++
+even volatile will not fix it as lets say
+1. Th1 reads value a which is 1
+2. Th2 reads the value which is still 1
+3. Th1 increment it to 1. and write it new value is a =2
+4. Now TH2 will increment the value, here since its read value is still 1 it will increment
+a to 2, a=2 which is not consistent it should be 3 instead.
+
+
+1. Fix is to always use the synchornized block with the compound operation.
+2. second way to fix this is to use the Atomic Integer.
+and use the increment method.
+a.increment(); it is the responsibility of the JVM to do that.
+incrementAndGet, decrementAndGet, addAndGet, 
+Use cases: volatile are used for Flags, Atomic integer, Atomic Long are used for Counters.
+Atomic references: Cache, building new cache in the background and replacing automatically
+Used by some internal classes. No block Algorithms.
+
+===============================
+Data Integrity issue:
+
+Thread Local: 
+
+Use Case1:
+Per Thread instances for memory efficiency and Thread Safety.
+
+
+
+
+

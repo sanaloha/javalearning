@@ -4,11 +4,11 @@ public class BubbleSortDemo {
 	
 	public static void main(String[] args) {
 		
-		int loopCount=0;
+		int loopCount=0; //to see the performance
 		
-		int[] intArr = {1, 2 ,3,4,5};
+		//int[] intArr = {1, 2 ,3,4,5};
 		
-		//int[] intArr = {20, 25 ,-76,55,-22};
+		int[] intArr = {20, 25 ,-76,55,-22};
 		 							//lui
 		
 		//itr 1 {20,-76,25,-22,55}

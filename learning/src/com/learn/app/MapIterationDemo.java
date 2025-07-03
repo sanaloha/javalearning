@@ -14,24 +14,24 @@ public class MapIterationDemo {
 		myMap.put(7, "ABHIS");
 		myMap.put(4, "SAMBI");
 		
-		myMap.forEach( (a,b)->{
-			
-			System.out.println("KEY "+a+" Value"+b);
-		});
+		//print key value from a map
 		
-		
-		
+		myMap.forEach((a,b)->System.out.println("Key "+a+" value "+b));
+		//get the key and print it
 		for(int key:myMap.keySet()) {
-			System.out.println("KEY==="+key);
+			System.out.println("Key Only "+key);
 		}
 		
-		for(String value:myMap.values()) {
-			System.out.println("VALUE==="+value);
+		//get the value and print
+		for(String val:myMap.values()) {
+			System.out.println("Values "+val);
 		}
 		
-		myMap.entrySet().stream().forEachOrdered(a->{
-			System.out.println("Order key=="+a.getKey()+" Value=="+a.getValue());
-		});
+		//get the ordered values
+		myMap.entrySet().stream().forEachOrdered(a->System.out.println("Key "+a.getKey()+" val="+a.getValue()));
+		
+		//*****you cannot get stream directly from the map... you may need entryset
+		
 	}
 
 }

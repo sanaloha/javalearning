@@ -15,7 +15,11 @@ public class DemoApp {
 			System.out.println("Result="+res);
 		};
 		doDem.dJob();
-
+		
+	}
+	public static void showDoable(Doable d) {
+		
+		System.out.println("Show");
 	}
 
 }
