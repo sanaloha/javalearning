@@ -14,6 +14,7 @@ public class LambdaDemoTwo {
 		prodList.add(new Product(2,"SONY",14000f));
 		prodList.add(new Product(3,"BRAVIA",20200f));
 		prodList.add(new Product(4,"LENOVO",1000f));
+		prodList.add(new Product(4,"LENOVO",1000f));
 		
 		Stream<Product> prodStream = prodList.stream().filter(p->p.price>12000);
 		prodStream.forEach(p->System.out.println("Product name "+p.name+" prod price "+p.price));
