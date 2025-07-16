@@ -18,16 +18,15 @@ public class BinaryToDecimal {
 		useScanner();
 	}
 	public static void useScanner() {
-		Scanner scObj = new Scanner(System.in);
-		System.out.println("Enter the Binary number");
-		String binaryNumber = scObj.nextLine();
-		
+				
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter the binary no u want to convert");
 		String binaryIn = scan.nextLine();
 		int decimal = Integer.parseInt(binaryIn,2);
 		
 		System.out.println("Decimal=="+decimal);
+		
+		String binaryNumber = "10011";
 		
 		System.out.println("Decimal Number="+Integer.parseInt(binaryNumber,2));
 		

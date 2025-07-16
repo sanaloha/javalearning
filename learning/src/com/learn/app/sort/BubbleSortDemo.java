@@ -27,18 +27,23 @@ public class BubbleSortDemo {
 				
 				if(intArr[i] >intArr[i+1]) {
 					swap(intArr,i,i+1);
+					
 				}
 			}
+			for(int j=0;j<intArr.length;j++) {
+				System.out.println("int array["+lastUnsortedIndex+"]"+intArr[j]);
+			}
+			System.out.println("New Line");
 			
 			
 		}
 		
-		System.out.println("Loop count"+loopCount);
+		//System.out.println("Loop count"+loopCount);
 		
 		//print the array
 		
 		for(int i=0;i<intArr.length;i++) {
-			System.out.println(intArr[i]);
+			//System.out.println(intArr[i]);
 		}
 			
 		

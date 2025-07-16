@@ -1,0 +1,18 @@
+java benefits of using buffer reader over File
+
+1. Improved Performance
+BufferedReader reads data in chunks (buffers), reducing the number of I/O operations. This makes it 
+significantly faster compared to reading data byte-by-byte or character-by-character directly from a
+ file.
+
+2. Convenient Line-by-Line Reading
+BufferedReader provides the readLine() method, which allows you to read an entire line of text at once.
+This is much more convenient than manually parsing data when using a File object.
+
+3. Memory Efficiency
+By buffering data, BufferedReader minimizes memory usage and avoids frequent disk access, which can be resource-intensive.
+4. Ease of Use
+BufferedReader integrates seamlessly with other Java I/O classes like FileReader or InputStreamReader, making it easy to set up and use for reading text files.
+5. Error Handling
+
+It provides built-in mechanisms to handle I/O exceptions effectively, making your code more robust and easier to debug.
