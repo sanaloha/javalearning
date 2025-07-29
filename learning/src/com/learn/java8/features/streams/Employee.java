@@ -38,4 +38,9 @@ public class Employee {
 	Integer salary;
 	
 
+	public String toString() {
+		
+		return this.name;
+		
+	}
 }

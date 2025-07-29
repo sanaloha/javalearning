@@ -30,11 +30,12 @@ public class StreamsDemo {
 		};
 		//convert above whole statement into a single line using lambda expression`
 		Predicate<Integer> predLamd = n-> n%2==1;
+	//	System.out.println("Test Result="+predLamd.test(8));
 		
 		Stream<Integer> data = numList.stream();
 
-		data.forEach(n->System.out.println(n));
-		numList.forEach(a->System.out.println(a));
+		//data.forEach(n->System.out.println(n));
+		//numList.forEach(a->System.out.println(a));
 		
 				
 		//create another stream
@@ -67,13 +68,13 @@ public class StreamsDemo {
 		//split this into array of streams with ""
 		
 		
-	Map<String,Long> countMap =	Arrays.stream(input.split("")).collect(
+		Map<String,Long> countMap =	Arrays.stream(input.split("")).collect(
 												Collectors.groupingBy(
 												Function.identity(),Collectors.counting()
 												)
 										);
 	
-	System.out.println(countMap);
+	System.out.println("Count Map="+countMap);
 		
 		
 	//Assume you have List of employee in a various departments WAP to find the highest paid employee from each department
@@ -116,11 +117,11 @@ public class StreamsDemo {
 	System.out.println(empMaxSal);	
 	
 	//Stream vs parallel stream: For read op u can use the parallel stream but for write always use stream
-		//stream runs on single core in main threas
+		//stream runs on single core in main threads
 		
-		IntStream.rangeClosed(1, 10).forEach(t->System.out.println(Thread.currentThread().getName()+t));
+	IntStream.rangeClosed(1, 10).forEach(t->System.out.println(Thread.currentThread().getName()+t));
 		
-		IntStream.rangeClosed(1, 10).parallel().forEach(t->System.out.println(Thread.currentThread().getName()+":"+t));
+	IntStream.rangeClosed(1, 10).parallel().forEach(t->System.out.println(Thread.currentThread().getName()+":"+t));
 		
 	}
 	
