@@ -21,3 +21,4 @@ returns a stream of consisting of resulted elements.
 
 Streams can be used or consumed only once, once its used if someone try to use it again it will through an exceptio
 
+#Parallel Stream

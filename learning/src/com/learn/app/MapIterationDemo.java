@@ -18,6 +18,7 @@ public class MapIterationDemo {
 		
 		myMap.forEach((a,b)->System.out.println("Key "+a+" value "+b));
 		//get the key and print it
+		
 		for(int key:myMap.keySet()) {
 			System.out.println("Key Only "+key);
 		}
@@ -27,7 +28,8 @@ public class MapIterationDemo {
 			System.out.println("Values "+val);
 		}
 		
-		//get the ordered values
+		//get the ordered values, you cannot call stream method on map object.
+		//it can be called on entryset as shown below.
 		myMap.entrySet().stream().forEachOrdered(a->System.out.println("Key "+a.getKey()+" val="+a.getValue()));
 		
 		//*****you cannot get stream directly from the map... you may need entryset

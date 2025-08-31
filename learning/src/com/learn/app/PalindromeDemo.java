@@ -3,21 +3,26 @@ package com.learn.app;
 public class PalindromeDemo {
 	
 	public static void main(String[] args) {
-		palindrome();
+		int x =7667;
+		palindrome(x);
 		palindromeStr();
 	}
 	
-	public static void palindrome() {
-		int x = 7667;
-		int reverse=0, temp=x, remainder;
+	public static void palindrome(int input) {
+		
+		if(input ==0)
+			return;
+		
+		int reverse=0, temp=input, remainder;
 		
 		
-		while(x>0) {
-			remainder = x%10;
+		while(input>0) {
+			remainder = input%10;
 			reverse = reverse*10+remainder;
-			x=x/10;			
+			input=input/10;			
 			
 		}
+		
 		if(temp==reverse) {
 			System.out.println("Palindrome");
 		}else {

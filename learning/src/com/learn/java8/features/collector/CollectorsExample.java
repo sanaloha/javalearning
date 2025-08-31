@@ -22,7 +22,7 @@ public class CollectorsExample {
 		pList.add(new Product(5,"Gitlog",4534f));
 		pList.add(new Product(6,"Gitlog",4534f));
 		pList.add(new Product(7,"Azure",5343.24f));
-		getPriceAsListAndMap(pList);
+		getPriceAsListIntoSet(pList);
 		convertAsSet(pList);
 		getLowestPriceItem(pList);
 		convertAsMap(pList);
@@ -34,6 +34,12 @@ public class CollectorsExample {
 		
 		Set<String> name = new HashSet<>();
 		Set<Product> prodSet = new HashSet<>();
+		/**
+		 * Get the names of the elements using map
+		 * Filter all of the items which we are not able to add in the hash map
+		 * Collect them into the List.
+		 * 
+		 */
 		
 		List<String> noDupList = pList.stream().map(p->p.getName()).filter(n->!name.add(n)).collect(Collectors.toList());
 		System.out.println("Duplicate Item "+noDupList);
@@ -41,31 +47,43 @@ public class CollectorsExample {
 		System.out.println("No Dup Product=="+noDuplicateList);
 	}
 
-	public static void getPriceAsListAndMap(List<Product> pList) {
+	public static void getPriceAsListIntoSet(List<Product> pList) {
 		
 		List<Float> priceList = pList.stream().map(p->p.getPrice()).collect(Collectors.toList());
 		System.out.println("priceList "+priceList);
-		
 		Set<Float> priceListSet = pList.stream().map(p->p.getPrice()).collect(Collectors.toSet());
 		priceListSet.forEach(p->System.out.println("Price list Map=="+p));
 		
+		//better way
+		Set<Float> price = pList.stream().map(p->p.getPrice()).collect(Collectors.toSet());
+		
 	}
 	
-	//get product of the lowest price from the list
+	/**
+	 * Get the lowest price amongst items
+	 * Get the price using map
+	 * Use Filter or any existing method- here in case min method
+	 
+	 **/
 	public static void getLowestPriceItem(List<Product> pList) {
 		
 		pList.forEach(a->System.out.println("List of products "+a));
-		
 		Optional<Product> minPricePrdocut = pList.stream().min(Comparator.comparingDouble(p->p.getPrice()));
-	
 		minPricePrdocut.ifPresent(p->System.out.println("Minimum priced prdcut name= "+p));
+	}
+	
+	public static void getHighestPriceItem(List<Product> pList) {
+		
+		Optional<Product> highestPriceProduct = pList.stream().max(Comparator.comparingDouble(p->p.getPrice()));
+		highestPriceProduct.ifPresent(hp->System.out.println("Highest Priced Product"+hp));
 	}
 	
 	public static void convertAsMap(List<Product> pList) {
 		
 		Map<Integer, Product> prodmap = pList.stream().collect(Collectors.toMap(p->p.getId(), p->p));
-		
 		System.out.println("Product Map==="+prodmap);
+		
+		Map<Integer,Product> prodMap = pList.stream().collect(Collectors.toMap(p->p.getId(), p->p));
 		
 	}
 	

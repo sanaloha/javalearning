@@ -10,8 +10,9 @@ public class ArrayInitialization {
 	 * Array elements are contagious in the memory.
 	 * why array index starts from 0?
 	 * There are different kinds of arrays we have
-	 * Array is a box which can use to hold the similar kind of data, you don't have to create 
-	 * variable to hold each data. Just create one box nd put everything there.
+	 * Array is a box which can use to hold the similar kind of data, 
+	 * you don't have to create variable to hold each data. Just create
+	 *  one box nd put everything there.
 	 * 
 	 * With this class you will learn
 	 * 1. How to update size of an array dynamically
@@ -24,21 +25,25 @@ public class ArrayInitialization {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//playWithArrays();
-		//deleteElement();
-		mergeIntervals();
-		sortArrays();
+		deleteElement();
+		//mergeIntervals();
+		//sortArrays();
 		
 				
 
 	}
 	
 	private static void sortArrays() {
+		int loopcount=0;
 		
 		Integer[] arr = {22,34,11,44,33,32,55,80,60};
 		
 		System.out.println("====SORT ARRAY========================");
+		
 		for(int i=0;i<arr.length-1;i++) {
+			loopcount++;
 			for(int j=i+1;j<=arr.length-1;j++) {
+				loopcount++;
 				int temp=0;
 				if(arr[i]>arr[j]) {
 					temp = arr[i];
@@ -51,7 +56,7 @@ public class ArrayInitialization {
 		}
 		System.out.println("Sorted Array="+Arrays.deepToString(arr));
 		
-		System.out.println("=======================");
+		System.out.println("==========loop count============="+loopcount);
 	}
 	
 	private static void mergeIntervals() {
@@ -113,19 +118,28 @@ public class ArrayInitialization {
 		
 		System.out.println("======Delete 1st element from Array=========");
 		
-		Integer[] array1 = {22,32,13,45,66};
-		System.out.println("Input Array=="+ Arrays.deepToString(array1));
-					
-		for(int i =1;i<array1.length-1;i++) {
-			array1[i] = array1[i+1];
+		Integer[] intArr = {22,32,13,45,66};
+		System.out.println("Input Array=="+ Arrays.deepToString(intArr));
+							
+		removeElement(6,intArr);
 			
+		intArr = Arrays.copyOf(intArr, intArr.length-1);
+		
+		System.out.println("Updated Array=="+ Arrays.deepToString(intArr));
+		System.out.println("==============deleteElement ends========================");	
+		
+	}
+	
+	public static Integer[] removeElement(int index, Integer[] arr){
+		if(index <= arr.length) {
+						
+			for(int i =index;i<arr.length-1;i++) {
+				arr[i] = arr[i+1];
+				
+			}
 		}
 		
-		//After removing the array, update the array size dynamically.
-		array1 = Arrays.copyOf(array1, array1.length-1);
-		
-		System.out.println("Updated Array=="+ Arrays.deepToString(array1));
-		System.out.println("==============deleteElement ends========================");	
+		return arr;
 		
 	}
 

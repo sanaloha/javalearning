@@ -4,8 +4,14 @@ public class Welcome {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("Welcome to Learning");
-
+		
+	String TEXT_BLOCK_JSON = """
+				{
+					"name" : "Baeldung",
+					"website" : "https://www.%s.com/"
+				}
+				""";
+		System.out.println(TEXT_BLOCK_JSON);
 	}
 
 }
