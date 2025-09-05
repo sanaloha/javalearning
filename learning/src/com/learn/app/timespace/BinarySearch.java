@@ -5,14 +5,18 @@ public class BinarySearch {
 	public static void main(String[] args) {
 			
 		int[] arr = {1, 3, 5, 7, 9, 11};
-        System.out.println(binarySearch(arr, 7)); // O(log n)
-        
-        
+       // System.out.println(binarySearch(arr, 11)); // O(log n)
+		System.out.println("search"+binarySearchDemo(arr,11));
+             
         //merge sort
         int[] arr1 = {38, 27, 43, 3, 9, 82, 10};
         mergeSort(arr, 0, arr.length - 1);
         for (int num : arr) System.out.print(num + " ");
 
+	}
+	
+	public static int binarySearchDemo(int[] arr,int target) {
+		return -1;
 	}
 	
 	/**

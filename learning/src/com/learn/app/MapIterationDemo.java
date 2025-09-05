@@ -14,6 +14,8 @@ public class MapIterationDemo {
 		myMap.put(7, "ABHIS");
 		myMap.put(4, "SAMBI");
 		
+		System.out.println("get value from specific key"+myMap.get(myMap));
+		
 		//print key value from a map
 		
 		myMap.forEach((a,b)->System.out.println("Key "+a+" value "+b));

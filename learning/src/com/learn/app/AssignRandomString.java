@@ -1,6 +1,8 @@
 
 package com.learn.app;
 
+import java.util.Scanner;
+
 public class AssignRandomString {
 
 	public String name;
@@ -33,6 +35,18 @@ public class AssignRandomString {
 		System.out.println("Random name="+assign.name);
 		System.out.println("Return random employee"+getRandomElement());
 		
+		//binary to decimal
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the decimal no");
+		//String line = sc.nextLine();
+		//int decimal = Integer.parseInt(line);
+		byte a =24;
+		byte b=25;
+		byte result = (byte)(a + b);  //you will get error can't convert from integer to byte.
+		System.out.println("decimal number is"+result);
+		
+		
+	
 		
 	}
 

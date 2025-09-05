@@ -2,7 +2,20 @@ package com.learn.app.arrays;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
+
+/**
+ * Below Methods are utilized in this program
+ *	Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
+ *	Arrays.toString(interval)
+ *	Arrays.deepToString
+ *	Math.max(currentEnd, nextEnd);
+ *	list.toArray(new int[merged.size()][]);
+ * 
+ * 
+ **/
 
 public class MergeInterval {
 
@@ -17,7 +30,7 @@ public class MergeInterval {
         System.out.println("==="+Arrays.deepToString(intervals));
 
         List<int[]> merged = new ArrayList<>();
-        int[] currentInterval = intervals[0];
+        int[] currentInterval = intervals[0]; //[1,3]
         
         merged.add(currentInterval);
 
@@ -37,12 +50,47 @@ public class MergeInterval {
         }
         return merged.toArray(new int[merged.size()][]);
     }
+	
+	public static int[][] mergeTrial(int[][] intervals){
+		
+		List<int[]> merged = new ArrayList();
+		//Sort the given array
+		Arrays.sort(intervals,(a,b)->Integer.compare(a[0],b[0]));
+		
+		System.out.println("==="+Arrays.deepToString(intervals));
+		//create flags:
+		int[] currentInterval = intervals[0];
+		merged.add(currentInterval);
+				
+		int currentEnd = currentInterval[1];
+		int nextStart;
+		int nextEnd;
+		
+		for(int[] interval:intervals) {
+			
+			nextStart = interval[0];
+			nextEnd = interval[1];
+			
+			if(currentEnd >nextStart) {
+				currentEnd = Math.max(currentEnd, nextEnd);
+				currentInterval[1] = currentEnd;
+			}else if(currentEnd < nextStart) {
+				currentInterval = interval;
+				merged.add(currentInterval);
+			}
+			
+		}
+		
+		//TODO: update the return
+		return merged.toArray(new int[merged.size()][]);
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
 		int[][] intervals = {{1, 3},{8, 10},{2, 6},{15, 18},{16,20}};
-        int[][] result = merge(intervals);
+        //int[][] result = merge(intervals);
+        int[][] result = mergeTrial(intervals);
 
         System.out.println("Merged Intervals:");
         for (int[] interval : result) {

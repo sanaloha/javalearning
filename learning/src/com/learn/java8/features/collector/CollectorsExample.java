@@ -82,14 +82,12 @@ public class CollectorsExample {
 		
 		Map<Integer, Product> prodmap = pList.stream().collect(Collectors.toMap(p->p.getId(), p->p));
 		System.out.println("Product Map==="+prodmap);
-		
-		Map<Integer,Product> prodMap = pList.stream().collect(Collectors.toMap(p->p.getId(), p->p));
-		
+			
 	}
 	
 	public static void convertAsSet(List<Product> pList) {
 		
-		Set<Product> productSet = pList.stream().map(p->p).collect(Collectors.toSet());
+		Set<Product> productSet = pList.stream().collect(Collectors.toSet());
 		
 		System.out.println("Product set="+productSet);
 		

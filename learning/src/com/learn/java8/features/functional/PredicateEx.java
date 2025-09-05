@@ -23,6 +23,12 @@ public class PredicateEx {
 			
 			
 		});
+		//another way
+		users.removeIf( (UserPre user)->{
+			
+			return user.isActive();
+			
+		});
 		
 		users.removeIf(a->a.isActive());
 
@@ -34,5 +40,15 @@ class UserPre{
 	
 	public boolean isActive() {
 		return true;
+	}
+	
+	class CustomPredicate<UserPre> implements Predicate<UserPre>{
+		
+		@Override
+		public boolean test(UserPre user) {
+			// TODO Auto-generated method stub
+			return true;
+		}
+		
 	}
 }

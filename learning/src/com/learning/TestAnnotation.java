@@ -13,8 +13,18 @@ public class TestAnnotation {
 		Animal animal = new Animal();
 		animal.eatSomething();
 		
+		//subclass version
+		Animal animalSub = new Dog();
+		animalSub.eatSomething();
+		//you cannot call run method of dog as the reference is of Animal class and it doesnot
+		//have the run method.
+		
+		
+		
+		//create arraylist of objects
 		ArrayList list=new ArrayList();  
 		list.add("sonoo");  
+		list.add(57);  
 		list.add("vimal");  
 		list.add("ratan");  
 		  

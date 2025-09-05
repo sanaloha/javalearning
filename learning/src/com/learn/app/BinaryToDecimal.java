@@ -38,10 +38,12 @@ public class BinaryToDecimal {
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter Decimal no");
-		Integer decimalNum= Integer.parseInt(sc.nextLine());
-		String binaryNum = Integer.toBinaryString(decimalNum);
-		System.out.println("Binary num="+binaryNum);
-	
+		int decimalNumber = sc.nextInt();
+		String binary = Integer.toBinaryString(decimalNumber);
+		
+		System.out.println("Binary number is"+binary);
+		
+		
 			
 	}
 	

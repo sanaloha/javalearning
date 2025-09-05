@@ -1,5 +1,7 @@
-#Time complexity tells us how the runtime of an algorithm grows as the input size (n) increases.
-We usually express it in Big-O notation.
+Time complexity tells us how the runtime of an algorithm grows as the 
+input size (n) increases.
+usually express it in Big-O notation.
+
 **Common Time Complexities:
 O(1) → Constant time → Independent of input size.
 Example: Accessing an element in an array by index.
@@ -24,13 +26,14 @@ Example: Solving Traveling Salesman Problem via brute force.
 
 Space Complexity
 
-Space complexity measures the amount of extra memory an algorithm uses, relative to input size n.
+Space complexity measures the amount of extra memory an algorithm uses, 
+relative to input size n.
 
 It includes:
 
-Fixed part → Memory for constants, program code, etc.
+**Fixed part → Memory for constants, program code, etc.
 
-Variable part → Memory for input, variables, data structures, recursion stack.
+**Variable part → Memory for input, variables, data structures, recursion stack.
 
 Common Space Complexities:
 O(1) → Constant space.

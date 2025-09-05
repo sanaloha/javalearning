@@ -1,6 +1,7 @@
 package com.learn.java8.features.streams;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -17,6 +18,7 @@ public class StreamsDemo {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		Collections.sort(null);
 		
 		List<Integer> numList = Arrays.asList(17,4,7,21,1,3,9);
 		
@@ -54,8 +56,16 @@ public class StreamsDemo {
 		Stream<Integer> dataToMap = numList.stream();
 		Stream<Integer> mapData =  dataToMap.map(n->n*n);
 		
-		sortedData.forEach(s->System.out.println("sorted Data=="+s));
-		mapData.forEach(m->System.out.println("map data=="+m));
+		//sortedData.forEach(s->System.out.println("sorted Data=="+s));
+		//mapData.forEach(m->System.out.println("map data=="+m));
+		//use of reduce
+		int addition = numList.stream().reduce(0, Integer::sum);
+		System.out.println("Sum of all numbers"+addition);
+		List<Integer> oddList = numList.stream().filter(n->n%2==1).sorted().toList();
+		System.out.println("ODD List=="+oddList);
+		
+		List<Integer> multipleofTwo = numList.stream().filter(n->n%2==1).sorted().map(n->n*2).toList();
+		System.out.println("ODD List=="+multipleofTwo);
 		
 		int result = numList.stream().filter(n->n%2==1).sorted().map(n->n*2).reduce(0, (c,e)->c+e);
 		
@@ -94,6 +104,7 @@ public class StreamsDemo {
 	
 	Comparator<Employee> compSal = Comparator.comparing(Employee::getSalary);
 	
+	
 	Map<String, List<Employee>> empMap =  employees.stream().collect(Collectors.groupingBy(
 			Employee::getDept
 		));
@@ -119,9 +130,9 @@ public class StreamsDemo {
 	//Stream vs parallel stream: For read op u can use the parallel stream but for write always use stream
 		//stream runs on single core in main threads
 		
-	IntStream.rangeClosed(1, 10).forEach(t->System.out.println(Thread.currentThread().getName()+t));
+	//IntStream.rangeClosed(1, 10).forEach(t->System.out.println(Thread.currentThread().getName()+t));
 		
-	IntStream.rangeClosed(1, 10).parallel().forEach(t->System.out.println(Thread.currentThread().getName()+":"+t));
+//	IntStream.rangeClosed(1, 10).parallel().forEach(t->System.out.println(Thread.currentThread().getName()+":"+t));
 		
 	}
 	

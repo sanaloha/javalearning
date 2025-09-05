@@ -9,9 +9,7 @@ public class SelectionSortDemo {
 		//int[] arr = {1, 2 ,3,4,5};
 		
 		int[] arr = {20, 25 ,-76,55,-22};
-		
-		
-		
+			
 		for(int unsortedIndex=arr.length-1;unsortedIndex>0;unsortedIndex--) {
 			loopCount++;
 			int largestIndex=0;
