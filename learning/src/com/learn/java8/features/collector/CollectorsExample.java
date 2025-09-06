@@ -49,14 +49,15 @@ public class CollectorsExample {
 
 	public static void getPriceAsListIntoSet(List<Product> pList) {
 		
-		List<Float> priceList = pList.stream().map(p->p.getPrice()).collect(Collectors.toList());
+		List<Float> priceList = pList.stream().map(p->p.getPrice()).toList();
+				//pList.stream().map(p->p.getPrice()).collect(Collectors.toList());
 		System.out.println("priceList "+priceList);
 		Set<Float> priceListSet = pList.stream().map(p->p.getPrice()).collect(Collectors.toSet());
-		priceListSet.forEach(p->System.out.println("Price list Map=="+p));
-		
-		//better way
-		Set<Float> price = pList.stream().map(p->p.getPrice()).collect(Collectors.toSet());
-		
+		//priceListSet.forEach(p->System.out.println("Price list Map=="+p));
+		System.out.println("No Dup Price list Set =="+priceListSet);
+		List<Float> lowPrices = priceListSet.stream().filter(p->p<300).toList();
+		System.out.println("Price < 300"+lowPrices);
+				
 	}
 	
 	/**
@@ -67,7 +68,8 @@ public class CollectorsExample {
 	 **/
 	public static void getLowestPriceItem(List<Product> pList) {
 		
-		pList.forEach(a->System.out.println("List of products "+a));
+		//pList.forEach(a->System.out.println("List of products "+a));
+		System.out.println("Product List=="+pList);
 		Optional<Product> minPricePrdocut = pList.stream().min(Comparator.comparingDouble(p->p.getPrice()));
 		minPricePrdocut.ifPresent(p->System.out.println("Minimum priced prdcut name= "+p));
 	}
@@ -84,6 +86,13 @@ public class CollectorsExample {
 		System.out.println("Product Map==="+prodmap);
 			
 	}
+	/**
+	 * Make use of Collectors functions
+	 *  toSet()
+	 *  summingInt
+	 *  averagingDouble
+	 *  Counting
+	 * **/
 	
 	public static void convertAsSet(List<Product> pList) {
 		
@@ -91,8 +100,10 @@ public class CollectorsExample {
 		
 		System.out.println("Product set="+productSet);
 		
-		Set<Product> prodList = pList.stream().filter(p->p.getPrice()>300).collect(Collectors.toSet());
-		
+		//filter products having price > 300
+		Set<Product> prodList = pList.stream().filter(a->a.getPrice()>300).collect(Collectors.toSet());
+				
+		System.out.println("Price >300="+prodList);
 		//add id
 		Integer sum = pList.stream().collect(Collectors.summingInt(a->a.getId()));
 		System.out.println("Sum of ID="+sum);
